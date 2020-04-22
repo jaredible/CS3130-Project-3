@@ -10,6 +10,8 @@ package main;
  * @notes
  */
 public class BST {
+  public static boolean DEBUG = false;
+
   private Node root;
 
   public BST() {}
@@ -20,19 +22,23 @@ public class BST {
     }
   }
 
-  public boolean getExists(int key) {
-    return getExists(root, key);
+  public boolean find(int key) {
+    return find(root, key);
   }
 
-  private boolean getExists(Node node, int key) {
+  private boolean find(Node node, int key) {
     if (node == null) {
+      System.out.println("NIL");
       return false;
     } else if (key == node.key) {
+      System.out.println(node.key);
       return true;
     } else if (key < node.key) {
-      return getExists(node.left, key);
+      System.out.println(node.key);
+      return find(node.left, key);
     } else {
-      return getExists(node.right, key);
+      System.out.println(node.key);
+      return find(node.right, key);
     }
   }
 

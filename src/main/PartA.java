@@ -13,7 +13,7 @@ public class PartA {
 
   public static void main(String[] args) {
     // Create an array of integers
-    int[] array = new int[] {30, 30, 10, 45, 38, 20, 50, 25, 33, 8, 12};
+    int[] array = new int[] {30, 10, 45, 38, 20, 50, 25, 33, 8, 12};
     // Create a BST with the array
     BST bst = new BST(array);
 
@@ -33,8 +33,10 @@ public class PartA {
     System.out.println("Largest: " + bst.getLargest());
 
     // Display results of searching for keys 38 and 9
-    System.out.println("38 Exists: " + bst.getExists(38));
-    System.out.println("9 Exists: " + bst.getExists(9));
+    BST.DEBUG = true;
+    System.out.println("38 Exists: " + bst.find(38));
+    System.out.println("9 Exists: " + bst.find(9));
+    BST.DEBUG = false;
 
     // Delete node with a key value of 10
     bst.delete(10);
