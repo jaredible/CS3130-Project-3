@@ -28,16 +28,16 @@ public class BST {
 
   private boolean find(Node node, int key) {
     if (node == null) {
-      System.out.println("NIL");
+      if (DEBUG) System.out.println("NIL");
       return false;
     } else if (key == node.key) {
-      System.out.println(node.key);
+      if (DEBUG) System.out.println(node.key);
       return true;
     } else if (key < node.key) {
-      System.out.println(node.key);
+      if (DEBUG) System.out.println(node.key);
       return find(node.left, key);
     } else {
-      System.out.println(node.key);
+      if (DEBUG) System.out.println(node.key);
       return find(node.right, key);
     }
   }
